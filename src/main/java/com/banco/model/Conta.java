@@ -3,6 +3,7 @@ package com.banco.model;
 import java.io.Serializable;
 import java.time.LocalDate;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -24,21 +25,21 @@ public class Conta implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@NotNull (message = "Campo Nome não pode ser nulo!")
-	@NotEmpty(message = "Campo Nome não pode ser vazio!")
+	@NotNull
+	@NotEmpty
 	private String nome;
 
-	@NotNull (message = "Campo Email não pode ser nulo!")
-	@NotEmpty(message = "Campo Email não pode ser vazio!")
-	@Email(message = "Email precisa ser válido!")
+	@NotNull
+	@NotEmpty
+	@Email
 	private String email;
 
-	@NotNull (message = "Campo CPF não pode ser nulo!")
-	@NotEmpty(message = "Campo CPF não pode ser vazio!")
-	@CPF(message = "CPF precisa ser válido")
+	@NotNull
+	@NotEmpty
+	@CPF
 	private String cpf;
 
-	@NotNull(message = "Campo CPF não pode ser vazio ou nulo!")
+	@NotNull
 	private LocalDate dataNascimento;
 
 	public Long getId() {
