@@ -24,14 +24,17 @@ public class Conta implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@NotEmpty(message = "Campo Nome não pode ser vazio ou nulo!")
+	@NotNull (message = "Campo Nome não pode ser nulo!")
+	@NotEmpty(message = "Campo Nome não pode ser vazio!")
 	private String nome;
 
-	@NotEmpty(message = "Campo Email não pode ser vazio ou nulo!")
+	@NotNull (message = "Campo Email não pode ser nulo!")
+	@NotEmpty(message = "Campo Email não pode ser vazio!")
 	@Email(message = "Email precisa ser válido!")
 	private String email;
 
-	@NotEmpty(message = "Campo CPF não pode ser vazio ou nulo!")
+	@NotNull (message = "Campo CPF não pode ser nulo!")
+	@NotEmpty(message = "Campo CPF não pode ser vazio!")
 	@CPF(message = "CPF precisa ser válido")
 	private String cpf;
 

@@ -1,5 +1,7 @@
 package com.banco.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,7 +24,7 @@ public class ContaController {
 	
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public Conta adicionar(@RequestBody Conta conta) {
+	public Conta adicionar(@RequestBody @Valid Conta conta) {
 		return contaService.criar(conta);
 	}
 }
