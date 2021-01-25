@@ -1,4 +1,4 @@
-package br.com.banco.controller;
+package com.banco.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.banco.model.Conta;
-import br.com.banco.service.ContaService;
+import com.banco.model.Conta;
+import com.banco.service.ContaService;
 
 @RestController
 @RequestMapping("/contas")

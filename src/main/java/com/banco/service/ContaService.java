@@ -1,8 +1,8 @@
-package br.com.banco.service;
+package com.banco.service;
 
 import java.util.List;
 
-import br.com.banco.model.Conta;
+import com.banco.model.Conta;
 
 public interface ContaService {
 	List<Conta> buscar();

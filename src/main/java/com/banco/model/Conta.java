@@ -1,4 +1,4 @@
-package br.com.banco.model;
+package com.banco.model;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -14,6 +15,7 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.br.CPF;
 
 @Entity
+@Table(name="conta")
 public class Conta implements Serializable {
 
 	private static final long serialVersionUID = 1L;
