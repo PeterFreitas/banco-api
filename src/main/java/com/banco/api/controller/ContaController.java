@@ -1,4 +1,4 @@
-package com.banco.controller;
+package com.banco.api.controller;
 
 import javax.validation.Valid;
 
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.banco.model.Conta;
-import com.banco.service.ContaService;
+import com.banco.domain.model.Conta;
+import com.banco.domain.service.ContaService;
 
 @RestController
 @RequestMapping("/contas")

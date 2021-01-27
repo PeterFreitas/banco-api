@@ -1,12 +1,13 @@
-package com.banco.service;
+package com.banco.domain.service;
 
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.banco.model.Conta;
-import com.banco.repository.ContaRepository;
+import com.banco.domain.exception.NegocioException;
+import com.banco.domain.model.Conta;
+import com.banco.domain.repository.ContaRepository;
 
 @Service
 public class ContaService {
@@ -23,11 +24,11 @@ public class ContaService {
 	private void validar(Conta novaConta) {
 		Boolean existeCpf = contaRepository.existsByCpf(novaConta.getCpf());
 		if (existeCpf) {
-			throw new RuntimeException("CPF já existe!");
+			throw new NegocioException("CPF já cadastrado em nosso banco de dados!");
 		}
 		Boolean existeEmail = contaRepository.existsByEmail(novaConta.getEmail());
 		if (existeEmail) {
-			throw new RuntimeException("Email já existe!");
+			throw new NegocioException("E-mail já cadastrado em nosso banco de dados!");
 		}
 	}	
 }

@@ -1,4 +1,4 @@
-package com.banco.model;
+package com.banco.domain.model;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -40,14 +40,6 @@ public class Conta implements Serializable {
 
 	@NotNull
 	private LocalDate dataNascimento;
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
 
 	public String getNome() {
 		return nome;
