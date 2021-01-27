@@ -2,6 +2,7 @@ package com.banco.controller;
 
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,12 +16,9 @@ import com.banco.service.ContaService;
 @RestController
 @RequestMapping("/contas")
 public class ContaController {
-	private ContaService contaService;
 
-	public ContaController(ContaService contaService) {
-		super();
-		this.contaService = contaService;
-	}
+	@Autowired
+	private ContaService contaService;
 	
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
