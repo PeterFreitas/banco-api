@@ -6,6 +6,5 @@ import com.banco.domain.model.Conta;
 
 public interface ContaRepository extends JpaRepository<Conta, Long> {
 	Boolean existsByCpf(String cpf);
-
 	Boolean existsByEmail(String email);
 }

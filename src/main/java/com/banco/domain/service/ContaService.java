@@ -24,11 +24,11 @@ public class ContaService {
 	private void validar(Conta novaConta) {
 		Boolean existeCpf = contaRepository.existsByCpf(novaConta.getCpf());
 		if (existeCpf) {
-			throw new NegocioException("CPF já cadastrado em nosso banco de dados!");
+			throw new NegocioException("CPF já cadastrado!");
 		}
 		Boolean existeEmail = contaRepository.existsByEmail(novaConta.getEmail());
 		if (existeEmail) {
-			throw new NegocioException("E-mail já cadastrado em nosso banco de dados!");
+			throw new NegocioException("Email já cadastrado!");
 		}
-	}	
+	}
 }
