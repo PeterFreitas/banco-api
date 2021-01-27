@@ -22,7 +22,7 @@ public class ContaController {
 	
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public Conta adicionar(@RequestBody @Valid Conta conta) {
-		return contaService.criar(conta);
+	public Conta adicionar(@RequestBody @Valid Conta novaConta) {
+		return contaService.criar(novaConta);
 	}
 }

@@ -24,20 +24,19 @@ public class ContaServiceImpl implements ContaService {
 
 	@Override
 	@Transactional
-	public Conta criar(Conta conta) {
-		validar(conta);
-		return contaRepository.save(conta);
+	public Conta criar(Conta novaConta) {
+		validar(novaConta);
+		return contaRepository.save(novaConta);
 	}
 
-	private void validar(Conta conta) {
-		Boolean existeCpf = contaRepository.existsByCpf(conta.getCpf());
+	private void validar(Conta novaConta) {
+		Boolean existeCpf = contaRepository.existsByCpf(novaConta.getCpf());
 		if (existeCpf) {
 			throw new RuntimeException("CPF já existe!");
 		}
-		Boolean existeEmail = contaRepository.existsByEmail(conta.getEmail());
+		Boolean existeEmail = contaRepository.existsByEmail(novaConta.getEmail());
 		if (existeEmail) {
 			throw new RuntimeException("Email já existe!");
 		}
-	}
-	
+	}	
 }
